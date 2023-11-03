@@ -1,10 +1,14 @@
-# Вам будет предоставлено слово. Ваша задача — вернуть средний символ слова. Если длина слова
-# нечетная, верните средний
-# символ. Если длина слова четная, верните 2 средних символа.
 
-def get_middle_letter(w):
-    lw = len(w) // 2
-    return w[lw - 1:lw + 1] if len(w) % 2 == 0 else w[lw]
+# разбивает число и умножает числа пока не останет ся один, пример - 39 ( 3 * 9 = 27, 2 * 7 = 14 , 1 * 4 = 5 ) , ответ - 3
+# посчитать количество циклов
 
 
-print(get_middle_letter(input('enter a word\n')))
+import math
+
+count = 0
+num = int(input())
+while len(str(num)) > 1:
+    count += 1
+    x = math.prod([int(i) for i in list(str(num))])
+    num = x
+print(count)
