@@ -1,14 +1,13 @@
+def in_array(array1, array2):
+    arr = set()
+    for i in array1:
+        for j in array2:
+            if i in j:
+                arr.add(i)
 
-# разбивает число и умножает числа пока не останет ся один, пример - 39 ( 3 * 9 = 27, 2 * 7 = 14 , 1 * 4 = 5 ) , ответ - 3
-# посчитать количество циклов
+    return [*arr]
 
+a1 = ["tarp", "mice", "bull"]
 
-import math
-
-count = 0
-num = int(input())
-while len(str(num)) > 1:
-    count += 1
-    x = math.prod([int(i) for i in list(str(num))])
-    num = x
-print(count)
+a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+print(in_array(a1, a2))
